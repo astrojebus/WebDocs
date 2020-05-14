@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT books (book*)>
+<!ELEMENT book (title, author+, publisher?, ISBN, year)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT publisher (#PCDATA)>
+<!ELEMENT ISBN (#PCDATA)>
+<!ELEMENT year (#PCDATA)>

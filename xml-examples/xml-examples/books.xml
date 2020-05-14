@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+  <book>
+    <title>Eloquent JavaScript: A Modern Introduction to Programming</title>
+    <author>Marijn Haverbeke</author>
+    <publisher>No Starch Press</publisher>
+    <ISBN>1593275846</ISBN>
+    <year>2015</year>
+  </book>
+  <book>
+    <title>Nonmonotonic Reasoning: Context-Dependent Reasoning</title>
+    <author>V. Marek</author>
+    <author>M. Truszczynski</author>
+    <publisher>Springer</publisher>
+    <ISBN>0387976892</ISBN>
+    <year>1993</year>
+  </book>
+</books>

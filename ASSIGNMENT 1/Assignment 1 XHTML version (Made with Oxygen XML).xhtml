@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Assignment 1</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"/></head><body><div class="article"><div class="titlepage"><div><div><h1 class="title"><a id="d5e1"/>Assignment 1</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Jesús</span> <span class="surname">Bustos
+      Lara</span></h3><div class="affiliation"><span class="orgname">Brandenburg University of Technology<br/></span></div></div></div><div><p class="pubdate">October 20, 2019</p></div></div><hr/></div><div class="toc"><p><strong>Table of Contents</strong></p><dl class="toc"><dt><span class="section"><a href="#d5e11">Description of Assignment</a></span></dt><dt><span class="section"><a href="#d5e18">Mathematical Formula (MathML)</a></span></dt><dt><span class="section"><a href="#d5e84">Scalable Vector Graphics (SVG)</a></span></dt></dl></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d5e11"/>Description of Assignment</h2></div></div></div><p>There were 3 main parts that constitute the graph: The grid-style to
+    present a sense of scale, the x and y axis, and the triangle shape.</p><p>For the grid-style, a nested pattern was defined. The pattern
+    element defines a graphics object which can be redrawn at repeated x and
+    y-coordinate intervals ("tiled") to cover an area. Said pattern is
+    referenced (using an id name) by the fill and/or stroke attributes on
+    other graphics elements to fill or stroke those elements with the
+    referenced pattern. In the assignment, one pattern of 10x10 gray colored
+    cells are embedded in a main pattern of black colored cells, these will be
+    replicated across the canvas space of the SVG. The patternUnits attribute
+    indicates which coordinate system to use for the geometry properties of
+    the pattern element. The userSpaceOnUse value indicates that all
+    coordinates refer to the user coordinate system as defined when the
+    pattern was applied, this means if the object changes size our pattern
+    would stay the same, and just repeat itself more times to fill the box.
+    The defs element is used to store graphical objects that will be used at a
+    later time. Objects created inside a def element are not rendered
+    directly. To display them one has to reference them (with their ID). The
+    main pattern is referenced with the use of the fill attribute inside a
+    rect element to fill the entire drawing canvas.</p><p>For the triangle and cell shapes the &lt;path&gt; is a powerful
+    element that was used to draw the figure with the help of the the d
+    attribute (The M indicates a moveto, the Ls indicate linetos, and the z
+    indicates a closepath).</p><p>For the coordinates plane, the grouping "g" element was used to
+    group graphical elements together, a feature not found in the SVG element,
+    all the attributes included in this element are applied to child elements.
+    Two subgroups are nested, one to draw the axis and a second one to draw
+    it's numeral ticks. Once grouped all the shapes, the transform attribute
+    is used to perform some presentation arrangement. The "scale" attribute
+    changes the size of an item i.e 0.4 equals 40% of normal size , as we
+    shrink the initial size of 1000x1000 by the translate attribute. The
+    translate attribute will move the group in the x and y axis. Inside of the
+    group we have a subgroup called -axis- that belongs to the actual
+    cartesian plane and a second subgroup called -tics- that draws ticks for
+    numeration with dark blue color. The stroke-dasharray attribute is a
+    presentation value that affects the line element and allows defining the
+    pattern of dashes and gaps of the ticks, the first value represents dash
+    width of 2.5, followed by a space of pixels. Also, 3 circles are drawn to
+    indicate the 3 points of the triangle named (A,B,C) using a circle and
+    text element. The text element defines a graphics element consisting of
+    text given coordinates, this is also used for the axis labels in
+    blue.</p><p>For the MathML implementation , the markup starts by adding the
+    formula's dependent variable. Identifiers are created with the mi element
+    and next to it, an explicit space is added with the mpadded element which
+    will be also added everytime a space is needed around the content. The
+    mpadded element's sizing atributes accept any possible values including
+    increment/decrement (a length prefixed with "+" or "-") in any available
+    unit such as "em". Following the variable the mo element allows to add the
+    corresponding operator. Afterwards we set a mfrac element , where the
+    first child element will be a numerical mn element as a numerator and a
+    the second child element will be denominator. For the next term, a parent
+    mfenced element will allow to group visually under bars its subterms, the
+    open and close attributes will specify the grouping symbol.However the
+    mrow element will logically group the items in a mathematical fashion.
+    Inside this, a mo element for the determinate identifier will be placed,
+    following a child mfenced subelement. A mtable element is used to organize
+    the four variables with subscripts. The Subscripts element is called msub
+    , where the second child specifies the subscripts and the first child will
+    be the baseline. After that, the closing elements for the mtable, and
+    mfenced are called. The same procedure is followed for the last part of
+    the formula.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d5e18"/>Mathematical Formula (MathML)</h2></div></div></div><div class="equation"><a id="d5e20"/><p class="title"><strong>Equation 1. </strong></p><div class="equation-contents"><m:math xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook">
+        <m:mpadded depth="+0.3ex" height="+0.3ex" width="+90%width">
+          <m:mi>T</m:mi>
+        </m:mpadded>
+
+        <m:mo>=</m:mo>
+
+        <m:mpadded lspace="0.3em" width="+0.6em">
+          <m:mfrac>
+            <m:mn>1</m:mn>
+
+            <m:mn>2</m:mn>
+          </m:mfrac>
+        </m:mpadded>
+
+        <m:mfenced close="|" open="|">
+          <m:mrow>
+            <m:mi>det</m:mi>
+
+            <m:mfenced>
+              <m:mtable>
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+
+                      <m:mi>B</m:mi>
+                    </m:msub>
+                  </m:mtd>
+
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>x</m:mi>
+
+                      <m:mi>C</m:mi>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+
+                <m:mtr>
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>y</m:mi>
+
+                      <m:mi>B</m:mi>
+                    </m:msub>
+                  </m:mtd>
+
+                  <m:mtd>
+                    <m:msub>
+                      <m:mi>y</m:mi>
+
+                      <m:mi>C</m:mi>
+                    </m:msub>
+                  </m:mtd>
+                </m:mtr>
+              </m:mtable>
+            </m:mfenced>
+          </m:mrow>
+        </m:mfenced>
+
+        <m:mo>=</m:mo>
+
+        <m:mpadded lspace="0.3em" width="+0.6em">
+          <m:mfrac>
+            <m:mn>1</m:mn>
+
+            <m:mn>2</m:mn>
+          </m:mfrac>
+        </m:mpadded>
+
+        <m:mfenced close="|" open="|">
+          <m:mtable>
+            <m:mtr>
+              <m:mtd>
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+
+                        <m:mi>B</m:mi>
+                      </m:msub>
+                    </m:mtd>
+
+                    <m:mtd>
+                      <m:msub>
+                        <m:mi>y</m:mi>
+
+                        <m:mi>C</m:mi>
+                      </m:msub>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+              </m:mtd>
+
+              <m:mtd>
+                <m:mo>-</m:mo>
+              </m:mtd>
+
+              <m:mtd>
+                <m:mtable>
+                  <m:mtr>
+                    <m:mtd>
+                      <m:msub>
+                        <m:mi>x</m:mi>
+
+                        <m:mi>C</m:mi>
+                      </m:msub>
+                    </m:mtd>
+
+                    <m:mtd>
+                      <m:msub>
+                        <m:mi>y</m:mi>
+
+                        <m:mi>B</m:mi>
+                      </m:msub>
+                    </m:mtd>
+                  </m:mtr>
+                </m:mtable>
+              </m:mtd>
+            </m:mtr>
+          </m:mtable>
+        </m:mfenced>
+      </m:math></div></div><br class="equation-break"/></div><div class="section"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="d5e84"/>Scalable Vector Graphics (SVG)</h2></div></div></div><p>Cartesian plane with triangle starting from (0,0)</p><div class="mediaobject"><svg:svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:m="http://www.w3.org/1998/Math/MathML" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:db="http://docbook.org/ns/docbook" height="600" width="800"><svg:defs> <svg:pattern height="10" id="tenthGrid" patternUnits="userSpaceOnUse" width="10">
+          <svg:path d="M 10 0 L 0 0 0 10" fill="none" stroke="silver" stroke-width="0.5"/> </svg:pattern> <svg:pattern height="100" id="grid" patternUnits="userSpaceOnUse" width="100"> <svg:rect fill="url(#tenthGrid)" height="100" width="100"/> <svg:path d="M 100 0 L 0 0 0 100" fill="none" stroke="gray" stroke-width="1"/>
+          </svg:pattern> </svg:defs> <svg:rect fill="url(#grid)" height="100%" width="100%"/> <svg:svg height="1000" width="1000"> <svg:path d="M550 250 L400 400 L650 400 Z"/> </svg:svg> <svg:circle cx="550" cy="250" fill="red" r="4"/> <svg:circle cx="400" cy="400" fill="red" r="4"/> <svg:circle cx="650" cy="400" fill="red" r="4"/> <svg:text fill="red" font-family="sans-serif" font-size="20px" x="550" y="250">B</svg:text> <svg:text fill="red" font-family="sans-serif" font-size="20px" x="400" y="400">A</svg:text> <svg:text fill="red" font-family="sans-serif" font-size="20px" x="650" y="400">C</svg:text> <svg:text fill="darkblue" font-family="sans-serif" font-size="20px" x="420" y="20">(y)</svg:text> <svg:text fill="darkblue" font-family="sans-serif" font-size="20px" x="750" y="420">(x)</svg:text> <svg:text fill="darkblue" font-family="sans-serif" font-size="20px" x="15" y="420">(-x)</svg:text> <svg:text fill="darkblue" font-family="sans-serif" font-size="20px" x="420" y="580">(-y)</svg:text> <svg:g transform="scale(0.4) translate(1000,1000)"> <svg:g id="axes" stroke="darkblue" stroke-width="5"> <svg:line x1="-1000" x2="1000" y1="0" y2="0"/> <svg:line x1="0" x2="0" y1="-1000" y2="1000"/>
+          </svg:g> <svg:g id="tics" stroke="darkblue" stroke-dasharray="2.5,245,2.5,0" stroke-width="30"> <svg:line x1="-1000" x2="1000" y1="0" y2="0"/> <svg:line x1="0" x2="0" y1="-1000" y2="1000"/> </svg:g> </svg:g></svg:svg></div></div></div></body></html>

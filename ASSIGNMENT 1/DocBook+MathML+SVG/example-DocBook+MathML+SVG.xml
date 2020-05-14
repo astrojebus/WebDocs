@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:html="http://www.w3.org/1999/xhtml"
+         xmlns:db="http://docbook.org/ns/docbook">
+  <info>
+    <title>Assignment 1</title>
+
+    <author>
+      <personname><firstname>Luis
+      Gustavo</firstname><surname>Nardin</surname></personname>
+
+      <affiliation>
+        <orgname>Brandenburg University of Technology</orgname>
+      </affiliation>
+    </author>
+
+    <pubdate>October 16, 2018</pubdate>
+  </info>
+
+  <section>
+    <title>Introduction</title>
+
+    <para>This is a simple example to show how to embed MathML and SVG markups
+    into a DocBook document.</para>
+  </section>
+
+  <section>
+    <title>Mathematical Formula (MathML)</title>
+
+    <para>Equation</para>
+
+    <equation>
+      <m:math>
+        <m:mi>a</m:mi>
+        <m:msup>
+          <m:mi>x</m:mi>
+          <m:mn>2</m:mn>
+        </m:msup>
+        <m:mo>+</m:mo>
+        <m:mi>b</m:mi>
+        <m:mi>x</m:mi>
+        <m:mo>+</m:mo>
+        <m:mi>c</m:mi>
+        <m:mo>=</m:mo>
+        <m:mn>0</m:mn>
+      </m:math>
+    </equation>
+
+    <para>Solution</para>
+
+    <equation>
+      <m:math>
+        <m:mi>x</m:mi>
+        <m:mo>=</m:mo>
+        <m:mfenced>
+          <m:mrow>
+            <m:msub>
+              <m:mi>x</m:mi>
+              <m:mi>B</m:mi>
+            </m:msub>
+            <m:msub>
+              <m:mi>x</m:mi>
+            <m:mi>C</m:mi>
+            </m:msub>
+          </m:mrow>
+        </m:mfenced>
+        <m:mfrac>
+          <m:mrow>
+            <m:mo>-</m:mo>
+            <m:mi>b</m:mi>
+            <m:mo>±</m:mo>
+            <m:msqrt>
+              <m:msup>
+                <m:mi>b</m:mi>
+                <m:mn>2</m:mn>
+              </m:msup>
+              <m:mo>-</m:mo>
+              <m:mn>4</m:mn>
+              <m:mi>a</m:mi>
+              <m:mi>c</m:mi>
+            </m:msqrt>
+          </m:mrow>
+          <m:mrow>
+            <m:mn>2</m:mn>
+            <m:mi>a</m:mi>
+          </m:mrow>
+        </m:mfrac>
+      </m:math>
+    </equation>
+  </section>
+
+  <section>
+    <title>Scalable Vector Graphics (SVG)</title>
+
+    <para>This is a simple example of how to embed SVG into a DocBook
+    document.</para>
+
+    <mediaobject>
+      <imageobject>
+        <imagedata>
+          <svg:svg>
+            <svg:rect fill="blue" height="120" width="220" x="10" y="20"/>
+          </svg:svg>
+        </imagedata>
+      </imageobject>
+    </mediaobject>
+  </section>
+</article>
